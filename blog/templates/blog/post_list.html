@@ -1,0 +1,17 @@
+<!--<html>
+<h1 style="font-size:300%;"> Sick blog, mostly about kittens and avocado </h1>
+  <p style="color:green;"> Do you ever wonder if, like, ya know, you woke up as a donut... "would i eat myself?" I wouldn't even question it. see above *dabs into infinity*  </p>
+</html>-->
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

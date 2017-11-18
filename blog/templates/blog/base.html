@@ -1,0 +1,34 @@
+<!--<html>
+<h1 style="font-size:300%;"> Sick blog, mostly about kittens and avocado </h1>
+  <p style="color:green;"> Do you ever wonder if, like, ya know, you woke up as a donut... "would i eat myself?" I wouldn't even question it. see above *dabs into infinity*  </p>
+</html>-->
+
+{% load staticfiles %}
+<html>
+<h1 style="text-align:center;font-size:300%;"> Sick blog, mostly about kittens and avocado </h1>
+  <p style="text-align:center;color:maroon;"> Do you ever wonder if, like, ya know, you woke up as a donut... "would i eat myself?" I wouldn't even question it. see above *dabs into infinity* <a href='https://www.instagram.com/stay_feisty_myfriends/?hl=en'>check out my insta while you're here</a> </p>
+
+    <head style="text-align:center;">
+        <title>Cam's blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <div class="page-header">
+          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1 style="text-align:center;"><a href="/">Super professional Blog</a></h1>
+        </div>
+    </head>
+    <body style="text-align:left;">
+
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                  {% block content %}
+              {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
